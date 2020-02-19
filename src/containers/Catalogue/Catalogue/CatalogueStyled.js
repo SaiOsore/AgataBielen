@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const CatalogueStyled = styled.div`
   position: relative;
   height: 100vh;
-  font-family: 'Main', Helvetica;
   font-size: 20px;
 `;
 

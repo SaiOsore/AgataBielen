@@ -5,7 +5,8 @@ export const colorVariables = {
   white50: 'rgba(255, 255, 255, .5)',
   main: '#ede0df', // pink
   main50: 'rgba(237, 224, 223, .5)',
-  accent: '#8a8e96', // blue
+  second: '#e5eaeb', //blue
+  accent: '#d6dbdf', // blue
   transparent: 'transparent',
 };
 

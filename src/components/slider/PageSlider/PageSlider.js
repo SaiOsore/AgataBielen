@@ -1,27 +1,30 @@
 import React from 'react';
 import Slider from 'react-slick';
-import GoldenGrid from '../../../components/layouts/GoldenGrid/GoldenGrid';
-import { 
-  GoldenGridLeftCol,
-  GoldenGridRightCol,
-  GoldenGridAside,
-  GoldenGridAsideWrapper,
-} from '../../../components/layouts/GoldenGrid/GoldenGridStyled';
-import { A } from "hookrouter";
+import PageSliderСaptions from '../../../components/slider/PageSliderСaptions/PageSliderСaptions';
 import { 
   PageSliderStyled,
-  PageSliderBlockWrapper,
-  PageSliderLeft,
-  PageSliderRight,
-  PageSliderBlock1,
-  PageSliderBlock2,
-  PageSliderBlock3,
-  PageSliderBlock4,
   PageSliderNextArrowStyled,
   PageSliderPrevArrowStyled,
+  PageSliderSquare,
+
+  PageSliderBlockWrapper,
+  PageSliderBlock,
+
+  PageSliderSideH,
+  PageSliderSideV,
+
   PageSliderTitle1,
+  PageSliderTitle2,
+  PageSliderSpecialText,
   PageSliderImgWrapper1,
-  PageSliderDescr1,
+  PageSliderImgWrapper2,
+  PageSliderImg,
+  PageSliderImgBlock,
+  PageSliderAbout,
+  PageSliderTaglineBlock,
+  PageSliderTagline,
+  PageSliderTaglineAuthor,
+  PageSliderTaglineLink,
 } from './PageSliderStyled';
 
 const PageSliderNextArrow = (props) => {
@@ -48,7 +51,18 @@ const PageSliderPrevArrow = (props) => {
   );
 }
 
-const PageSlider = () => {
+const PageSlider = (props) => {
+  const {
+    postDate,
+    author,
+    num,
+    mainTitle,
+    mainAbout,
+    mainImgSrc,
+    secondImgSrc,
+    blockImgSrc,
+    blockImgText,
+  } = props;
   const settings = {
     dots: true,
     arrows: true,
@@ -79,26 +93,91 @@ const PageSlider = () => {
 
   return (
     <PageSliderStyled>
+      <PageSliderСaptions 
+        postDate={postDate}
+        author={author}
+        num={num}
+      />
       <Slider {...settings}>
-        <PageSliderBlock1>
+        <PageSliderBlock
+          bgColor={'white'}
+        >
           <PageSliderBlockWrapper>
-            <PageSliderLeft>
-              1
-            </PageSliderLeft>
-            <PageSliderRight>
-              1
-            </PageSliderRight>
+            <PageSliderSideH bgColor={''}>
+              <PageSliderTitle1>
+                {mainTitle}
+              </PageSliderTitle1>
+              <PageSliderAbout>
+                {mainAbout}
+              </PageSliderAbout>
+            </PageSliderSideH>
+            <PageSliderSideH bgColor={'main'}>
+              <PageSliderImgWrapper1>
+                <PageSliderImg src={mainImgSrc} alt='main image'/>
+              </PageSliderImgWrapper1>
+            </PageSliderSideH>
           </PageSliderBlockWrapper>
-        </PageSliderBlock1>
-        <PageSliderBlock2>
-          2
-        </PageSliderBlock2>
-        <PageSliderBlock3>
-          3
-        </PageSliderBlock3>
-        <PageSliderBlock3>
-          4
-        </PageSliderBlock3>
+        </PageSliderBlock>
+        <PageSliderBlock
+          bgColor={'white'}
+        >
+          <PageSliderBlockWrapper>
+            <PageSliderSideH bgColor={'second'}>
+              <PageSliderImgWrapper2>
+                <PageSliderImg src={secondImgSrc} alt='second image'/>
+              </PageSliderImgWrapper2>
+            </PageSliderSideH>
+            <PageSliderSideH bgColor={''}>
+              <PageSliderTitle2>
+                <PageSliderSpecialText> Beauty </PageSliderSpecialText>
+                <PageSliderSpecialText Special20> is the</PageSliderSpecialText>
+                <PageSliderSpecialText Special20> harmony </PageSliderSpecialText>
+                <PageSliderSpecialText Special50> of purpose </PageSliderSpecialText>
+                <PageSliderSpecialText Special20>& form.</PageSliderSpecialText>
+              </PageSliderTitle2>
+            </PageSliderSideH>
+          </PageSliderBlockWrapper>
+        </PageSliderBlock>
+        <PageSliderBlock
+          bgColor={'white'}
+        >
+          <PageSliderBlockWrapper>
+            <PageSliderSideH bgColor={''}>
+              <PageSliderImgBlock>
+                <PageSliderImg src={blockImgSrc} alt='block image'/>
+                <p>
+                  {blockImgText}
+                </p>
+              </PageSliderImgBlock>
+            </PageSliderSideH>
+            <PageSliderSideH bgColor={'main'}>
+              <PageSliderTaglineBlock>
+                <PageSliderTaglineAuthor>
+                  <span>{mainTitle}</span> 
+                  <span>Agata Bielen</span>
+                </PageSliderTaglineAuthor>
+                <PageSliderTagline>
+                  The most simple forms create the strongest visual effects.
+                </PageSliderTagline>
+                <PageSliderTaglineLink href='#'>
+                  share
+                </PageSliderTaglineLink>
+              </PageSliderTaglineBlock>
+            </PageSliderSideH>
+          </PageSliderBlockWrapper>
+        </PageSliderBlock>
+        <PageSliderBlock
+          bgColor={'white'}
+        >
+          <PageSliderBlockWrapper Column>
+            <PageSliderSideV bgColor={'main'}>
+              6
+            </PageSliderSideV>
+            <PageSliderSideV Bottom bgColor={''}>
+              6
+            </PageSliderSideV>
+          </PageSliderBlockWrapper>
+        </PageSliderBlock>
       </Slider>
     </PageSliderStyled>
   );

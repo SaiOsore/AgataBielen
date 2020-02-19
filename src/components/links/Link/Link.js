@@ -19,7 +19,7 @@ const Link = (props) => {
       onClick={onClick}
       as={tag}
       color={color}
-      hoverColor={hoverColor}
+      hovercolor={hoverColor}
       pointerEvents={pointerEvents}
     >
       {' '}

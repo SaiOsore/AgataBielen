@@ -4,7 +4,7 @@ import {
   GoldenGridMainTitle,
 } from '../../../components/layouts/GoldenGrid/GoldenGridStyled';
 import MainNav from '../../../components/nav/MainNav/MainNav';
-import CatalogueFooter from '../../../components/catalogue/CatalogueFooter/CatalogueFooter';
+import CatalogueMainLink from '../../../components/catalogue/CatalogueMainLink/CatalogueMainLink';
 import { 
   CatalogueStyled, 
   CatalogueStripesTop,
@@ -20,7 +20,7 @@ const Home = () => {
           Catalogue
         </GoldenGridMainTitle>
         <MainNav />
-        <CatalogueFooter
+        <CatalogueMainLink
           textDecoration={'line-through'}
           onClick={e => e.preventDefault()}
           pointerEvents={'none'}

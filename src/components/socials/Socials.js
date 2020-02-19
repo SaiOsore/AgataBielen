@@ -6,25 +6,38 @@ import {
   SocialsLink,
 } from './SocialsStyled';
 
+const links = [
+  { link: '#',
+    name: 'twitter',
+  },
+  { link: '#',
+    name: 'instagram',
+  },
+];
+
 const Socials = (props) => {
   const {
     onClick,
     hoverColor,
     color,
   } = props;
+
+  const linksMarkup = links.map((link, index) => (
+    <SocialsItem key={index}>
+      <SocialsLink
+        href={link.link}
+        hoverColor={hoverColor}
+        color={color}
+        onClick={onClick}
+        children={link.name}
+      />
+    </SocialsItem>
+  ));
+
   return (
     <SocialsStyled>
       <SocialsList>
-        <SocialsItem>
-          <SocialsLink href="#" hoverColor={hoverColor} color={color} onClick={onClick}>
-            twitter
-          </SocialsLink>
-        </SocialsItem>
-        <SocialsItem>
-          <SocialsLink href="#" hoverColor={hoverColor} color={color} onClick={onClick}>
-            instagram
-          </SocialsLink>
-        </SocialsItem>
+        {linksMarkup}
       </SocialsList>
     </SocialsStyled>
   );

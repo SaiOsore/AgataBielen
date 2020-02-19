@@ -7,9 +7,9 @@ export const SocialsStyled = styled.div`
   top: 80vh;
   left: calc(0% - 40px);
   transform: rotate(-90deg);
-  font-size: ${(sizeVariables.xxxl).size};
+  font-size: ${(sizeVariables.m).size};
   ${device.laptopL} {
-    font-size: ${(sizeVariables.l).size};
+    font-size: ${(sizeVariables.s).size};
   }
 `;
 

@@ -1,185 +1,111 @@
 import React from 'react';
+import NavBlock from '../NavBlock/NavBlock';
+import NavList from '../NavList/NavList';
 import { 
-  MainNavLink,
-  MainNavFirst, 
-  MainNavSecond,
-  MainNavPreLast,
-  MainNavLast,
-  MainNavBlockFirst,
-  MainNavBlockLast,
-  MainNavBlockContainer,
-  MainNavBlockItem,
-  MainNavImg,
-  MainNavTitle,
-  MainNavArrow,
-  MainNavNum,
-  MainNavBlockTitle,
-  MainNavBlockNum,
-  MainNavBlockArrow,
-  MainNavBlockTextWrapper
+  MainNavContainer,
+  MainNavBlock
 } from './MainNavStyled';
 
 const MainNav = () => {
 
+  const linksBlock3 = [
+    { link: '#',
+      title: 'Storm Line',
+      num: '3',
+    },
+    { link: '#',
+      title: 'Valley Line',
+      num: '4',
+    },
+    { link: '#',
+      title: 'Mountain Line',
+      num: '5',
+    },
+    { link: '#',
+      title: 'Desert Line',
+      num: '6',
+    },
+    { link: '#',
+      title: 'Woods Line',
+      num: '7',
+    },
+    { link: '#',
+      title: 'Beach Line',
+      num: '8',
+    },
+  ];
+
+  const linksBlock4 = [
+    { link: '#',
+      title: 'Gold Line',
+      num: '9',
+    },
+    { link: '#',
+      title: 'Silver Line',
+      num: '10',
+    },
+    { link: '#',
+      title: 'Bronce Line',
+      num: '11',
+    },
+    { link: '#',
+      title: 'Lion Line',
+      num: '12',
+    },
+    { link: '#',
+      title: 'Snake Line',
+      num: '13',
+    },
+  ];
+
   return (
     <>
-      <MainNavFirst>
-        <MainNavLink href="/rightline">
-          <MainNavTitle>
-            Right Line
-          </MainNavTitle>
-          <MainNavArrow>→</MainNavArrow>
-          <MainNavNum>
-            Coll. №1
-          </MainNavNum>
-          <MainNavImg src="/img/catalogue/Main/rightline.jpg" alt="Right line" />
-        </MainNavLink>
-      </MainNavFirst>
-      <MainNavSecond>
-        <MainNavLink href="#">
-          <MainNavTitle>
-            Nature Line
-          </MainNavTitle>
-          <MainNavArrow>→</MainNavArrow>
-          <MainNavNum>
-            Coll. №2
-          </MainNavNum>
-          <MainNavImg src="/img/catalogue/Main/natureline.jpg" alt="Nature line" />
-        </MainNavLink>
-      </MainNavSecond>
-      
-      <MainNavBlockFirst>
-        <MainNavBlockContainer>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №3</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Storm Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №4</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Valley Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №5</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Mountain Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №6</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Desert Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №7</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Woods Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №8</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Beach Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-        </MainNavBlockContainer>
-      </MainNavBlockFirst>
-      <MainNavBlockLast>
-        <MainNavBlockContainer>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №9</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Gold Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №10</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Silver Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №11</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Bronce Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №12</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Lion Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-          <MainNavLink href="#">
-            <MainNavBlockItem>
-              <MainNavBlockTextWrapper>
-                <MainNavBlockNum>Coll. №13</MainNavBlockNum>
-                <MainNavBlockTitle as="h2">Snake Line</MainNavBlockTitle>
-              </MainNavBlockTextWrapper>
-              <MainNavBlockArrow>→</MainNavBlockArrow>
-            </MainNavBlockItem>
-          </MainNavLink>
-        </MainNavBlockContainer>
-      </MainNavBlockLast>
+      <MainNavBlock First>
+        <NavBlock 
+          link={'/rightline'}
+          title={'Right Line'}
+          num={'1'}
+          src={'/img/catalogue/Main/rightline.jpg'}
+          alt={'right line'}
+        />
+      </MainNavBlock>
 
-      <MainNavPreLast>
-        <MainNavLink href="#">
-          <MainNavTitle>
-            Arch Line
-          </MainNavTitle>
-          <MainNavArrow>→</MainNavArrow>
-          <MainNavNum>
-            Coll. №14
-          </MainNavNum>
-          <MainNavImg src="/img/catalogue/Main/archline.jpg" alt="Arch line" />
-        </MainNavLink>
-      </MainNavPreLast>
-      <MainNavLast>
-        <MainNavLink href="#">
-          <MainNavTitle>
-            Point Line
-          </MainNavTitle>
-          <MainNavArrow>→</MainNavArrow>
-          <MainNavNum>
-            Coll. №15
-          </MainNavNum>
-          <MainNavImg src="/img/catalogue/Main/pointline.jpg" alt="Point line" />
-        </MainNavLink>
-      </MainNavLast>
+      <MainNavBlock Second>
+        <NavBlock 
+          link={'#'}
+          title={'Nature Line'}
+          num={'2'}
+          src={'/img/catalogue/Main/natureline.jpg'}
+          alt={'nature line'}
+        />
+      </MainNavBlock>
+      
+      <MainNavContainer First>
+        <NavList links={linksBlock3} />
+      </MainNavContainer>
+
+      <MainNavContainer Last>
+        <NavList links={linksBlock4} />
+      </MainNavContainer>
+
+      <MainNavBlock PreLast>
+        <NavBlock 
+          link={'#'}
+          title={'Arch Line'}
+          num={'14'}
+          src={'/img/catalogue/Main/archline.jpg'}
+          alt={'arch line'}
+        />
+      </MainNavBlock>
+      <MainNavBlock Last>
+        <NavBlock 
+          link={'#'}
+          title={'Point Line'}
+          num={'15'}
+          src={'/img/catalogue/Main/pointline.jpg'}
+          alt={'point line'}
+        />
+      </MainNavBlock>
     </>
   );
 }

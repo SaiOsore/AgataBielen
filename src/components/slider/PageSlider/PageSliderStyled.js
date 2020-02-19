@@ -1,6 +1,6 @@
 import { get } from 'lodash';
-import styled from 'styled-components';
-import { colorVariables, device } from '../../../theme/variables';
+import styled, { css } from 'styled-components';
+import { sizeVariables, colorVariables, device } from '../../../theme/variables';
 
 export const PageSliderStyled = styled.div`
   position: relative;
@@ -16,10 +16,12 @@ export const PageSliderStyled = styled.div`
 
   & .PageSliderNext, & .PageSliderPrev {
     position: absolute;
-    top: 2%;
+    top: 3%;
     z-index: 10;
     background: none;
     border: none;
+    border-bottom: 1px solid ${colorVariables.black};
+    padding: 0;
   }
   & .PageSliderPrev {
     left: 10%;
@@ -66,6 +68,7 @@ export const PageSliderStyled = styled.div`
       width: initial;
       height: initial;
       transition: font-size .3s;
+      margin-bottom: 13px;
     }
     & .slick-active {
       color: ${colorVariables.black};
@@ -92,13 +95,6 @@ export const PageSliderStyled = styled.div`
   }
 `;
 
-const PageSliderBlock = styled.div`
-  height: 100vh;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-`;
-
 export const PageSliderNextArrowStyled = styled.button`
  
 `;
@@ -107,61 +103,214 @@ export const PageSliderPrevArrowStyled = styled.button`
   
 `;
 
-export const PageSliderContainer = styled.div`
+export const PageSliderBlock = styled.div`
+  height: 100vh;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
   background-color: ${(props) => get(colorVariables, props.bgColor, colorVariables.white)};
-`;
-
-export const PageSliderBlock1 = styled(PageSliderBlock)`
-  background: green;
-`;
-
-export const PageSliderBlock2 = styled(PageSliderBlock)`
-  background: grey;
-`;
-
-export const PageSliderBlock3 = styled(PageSliderBlock)`
-  background: pink;
-`;
-
-export const PageSliderBlock4 = styled(PageSliderBlock)`
-  background: orange;
 `;
 
 export const PageSliderBlockWrapper = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   position: relative;
+  ${device.tabletL} {
+    flex-direction: column;
+  }
+
+  ${(props) => props.Column && css`
+    flex-direction: column;
+  `};
 `;
 
-export const PageSliderLeft = styled.div`
-  width: 50%;
-  height: 100%;
-`;
-
-export const PageSliderRight = styled.div`
-  width: 50%;
-  height: 100%;
-`;
-
-export const PageSliderTitle1 = styled.h1`
-  font-size: 4rem;
-  white-space: nowrap;
-`;
-
-export const PageSliderImgWrapper1 = styled.div`
+export const PageSliderSideH = styled.div`
   position: relative;
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    max-width: 100%;
-    object-fit: cover;
+  width: 50%;
+  height: 100%;
+  background-color: ${(props) => get(colorVariables, props.bgColor, 'transparent')};
+  ${device.tabletL} {
+    width: 100%;
+    height: 50%;
   }
 `;
 
-export const PageSliderDescr1 = styled.div`
-  font-size: 14px;
-  padding: 20px 20% 20px 0;
+export const PageSliderSideV = styled.div`
+  position: relative;
+  width: 100%;
+  height: 80%;
+  background-color: ${(props) => get(colorVariables, props.bgColor, 'transparent')};
+
+  ${(props) => props.Bottom && css`
+    height: 20%;
+  `};
+`;
+
+export const PageSliderTitle1 = styled.h1`
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 7vw;
+  white-space: nowrap;
+  font-weight: 400;
+`;
+
+export const PageSliderTitle2 = styled.h2`
+  position: absolute;
+  top: 20%;
+  left: -2%;
+  font-size: 7vw;
+  white-space: nowrap;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: ${sizeVariables.xxl.spacing}
+`;
+
+export const PageSliderSpecialText = styled.p`
+  ${(props) => props.Special20 && css`
+    margin-left: -15%;
+  `};
+  ${(props) => props.Special50 && css`
+    margin-left: -40%;
+  `};
+`;
+
+export const PageSliderImgWrapper1 = styled.div`
+  width: 50%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const PageSliderImgWrapper2 = styled.div`
+  width: 44%;
+  height: 78%;
+  position: absolute;
+  top: 0%;
+  left: 22%;
+`;
+
+export const PageSliderImg = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+`;
+
+export const PageSliderImgBlock = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  width: 50vh;
+  height: 33vh;
+  & img {
+    margin-bottom: 10px;
+  }
+  & p {
+    text-align: justify;
+  }
+`;
+
+export const PageSliderAbout = styled.p`
+  position: absolute;
+  bottom: 12%;
+  right: -2%;
+  width: 27%;
+  padding: 2% 9% 0% 0;
   border-top: 1px solid black;
+  z-index: 10;
+  ${device.laptopL} {
+    width: 50%;
+  }
+`;
+
+export const PageSliderTaglineBlock = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const PageSliderTaglineAuthor = styled.div`
+  display: flex;
+  justify-content: center;
+  & span {
+    &:first-child {
+      &:after {
+        content: '';
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        margin: 0 15px;
+        display: inline-block;
+        background: ${colorVariables.black};
+      }
+    }
+  }
+`;
+
+export const PageSliderTagline = styled.p`
+  width: 100%;
+  max-width: 90%;
+  font-family: 'AGaramondProItalic', serif;
+  text-align: center;
+  font-size: 48px;
+  line-height: 1;
+  &:after, &:before {
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 1px;
+    height: 130px;
+    background: black;
+    margin: 10px 0;
+  }
+  &:after {
+    top: 0%;
+    margin: 50px 0;
+  }
+  &:before {
+    bottom: 0%;
+  }
+`;
+
+export const PageSliderTaglineLink = styled.a`
+  display: block;
+  border-bottom: 1px solid ${colorVariables.black};
+  color: ${colorVariables.black};
+  position: relative;
+  &:after {
+    content: '+';
+    display: inline-block;
+    position: absolute;
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`;
+
+export const PageSliderSquare = styled.svg`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  & path {
+    height: 300px;
+    width: 200px;
+    fill: white;
+  }
 `;

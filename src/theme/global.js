@@ -12,7 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     color: ${colorVariables.black};
     font-size: ${sizeVariables.m.size};
+    letter-spacing: ${sizeVariables.m.spacing}
     font-family: ${fontVariables.main};
+    font-weight: 400;
+    line-height: 1.5;
     overflow-x: hidden;
   }
 `;
