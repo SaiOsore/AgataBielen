@@ -1,5 +1,6 @@
 import { get } from 'lodash';
 import styled, { css } from 'styled-components';
+import Link from '../../../components/links/Link/Link';
 import { sizeVariables, colorVariables, device } from '../../../theme/variables';
 
 export const PageSliderStyled = styled.div`
@@ -105,7 +106,6 @@ export const PageSliderPrevArrowStyled = styled.button`
 
 export const PageSliderBlock = styled.div`
   height: 100vh;
-  min-height: 100vh;
   padding: 0;
   margin: 0;
   background-color: ${(props) => get(colorVariables, props.bgColor, colorVariables.white)};
@@ -129,6 +129,7 @@ export const PageSliderSideH = styled.div`
   position: relative;
   width: 50%;
   height: 100%;
+  padding: 7vw;
   background-color: ${(props) => get(colorVariables, props.bgColor, 'transparent')};
   ${device.tabletL} {
     width: 100%;
@@ -147,20 +148,20 @@ export const PageSliderSideV = styled.div`
   `};
 `;
 
-export const PageSliderTitle1 = styled.h1`
+export const PageSliderMainTitle = styled.h1`
   position: absolute;
-  top: 20%;
+  top: 11%;
   left: 10%;
   font-size: 7vw;
   white-space: nowrap;
   font-weight: 400;
 `;
 
-export const PageSliderTitle2 = styled.h2`
+export const PageSliderTitle = styled.h2`
   position: absolute;
   top: 20%;
   left: -2%;
-  font-size: 7vw;
+  font-size: 6vw;
   white-space: nowrap;
   font-weight: 400;
   line-height: 1;
@@ -176,7 +177,7 @@ export const PageSliderSpecialText = styled.p`
   `};
 `;
 
-export const PageSliderImgWrapper1 = styled.div`
+export const PageSliderMainImgWrapper = styled.div`
   width: 50%;
   height: 90%;
   position: absolute;
@@ -206,14 +207,18 @@ export const PageSliderImgBlock = styled.div`
   left: 50%;
   z-index: 100;
   transform: translate(-50%, -50%);
-  width: 50vh;
-  height: 33vh;
+  width: 50%;
   & img {
     margin-bottom: 10px;
   }
   & p {
     text-align: justify;
   }
+`;
+
+export const PageSliderImgBlockWrapper = styled.div`
+  width: 100%;
+  height: 50%;
 `;
 
 export const PageSliderAbout = styled.p`
@@ -225,7 +230,10 @@ export const PageSliderAbout = styled.p`
   border-top: 1px solid black;
   z-index: 10;
   ${device.laptopL} {
-    width: 50%;
+    width: 55%;
+  }
+  ${device.laptop} {
+    width: 75%;
   }
 `;
 
@@ -246,6 +254,7 @@ export const PageSliderTaglineBlock = styled.div`
 export const PageSliderTaglineAuthor = styled.div`
   display: flex;
   justify-content: center;
+  margin-left: 3%;
   & span {
     &:first-child {
       &:after {
@@ -263,10 +272,9 @@ export const PageSliderTaglineAuthor = styled.div`
 
 export const PageSliderTagline = styled.p`
   width: 100%;
-  max-width: 90%;
   font-family: 'AGaramondProItalic', serif;
   text-align: center;
-  font-size: 48px;
+  font-size: 4vw;
   line-height: 1;
   &:after, &:before {
     content: '';
@@ -274,13 +282,13 @@ export const PageSliderTagline = styled.p`
     position: relative;
     left: 50%;
     width: 1px;
-    height: 130px;
+    height: 8vw;
     background: black;
     margin: 10px 0;
   }
   &:after {
     top: 0%;
-    margin: 50px 0;
+    margin: 2vw 0;
   }
   &:before {
     bottom: 0%;
@@ -289,6 +297,7 @@ export const PageSliderTagline = styled.p`
 
 export const PageSliderTaglineLink = styled.a`
   display: block;
+  line-height: 1;
   border-bottom: 1px solid ${colorVariables.black};
   color: ${colorVariables.black};
   position: relative;
@@ -301,6 +310,50 @@ export const PageSliderTaglineLink = styled.a`
     transform: translateY(-50%);
   }
 `;
+
+export const PageSliderNextLinkStyled = styled(Link)`
+  position: absolute;
+  right: 0%;
+  bottom: 1vh;
+  width: initial;
+  height: initial;
+  display: inline-flex;
+  align-items: center;
+  font-size: 44px;
+  &:after {
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    width: 5vw;
+    height: 1px;
+    background-color: ${colorVariables.black};
+  }
+`;
+
+export const PageSliderTagBlock = styled.div`
+  display: flex;
+  padding: 0 20%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+`;
+
+export const PageSliderTag = styled.span`
+  margin-right: 2vw;
+`;
+
+export const PageSliderTagDate = styled.span`
+  
+`;
+
+export const PageSliderTagImgWrapper = styled.div`
+  width: 30%;
+`;
+
 
 export const PageSliderSquare = styled.svg`
   position: absolute;

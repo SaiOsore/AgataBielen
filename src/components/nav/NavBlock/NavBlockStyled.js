@@ -1,11 +1,19 @@
 import styled from 'styled-components';
-import { colorVariables } from '../../../theme/variables';
+import { colorVariables, device } from '../../../theme/variables';
 import { get } from 'lodash';
 import Link from '../../../components/links/Link/Link';
 
 export const NavBlockStyled = styled.div`
   width: 100%;
   height: 100%;
+`;
+
+export const NavBlockImgWrapper = styled.div`
+  height: 100%;
+  ${device.tablet} {
+    height: 60%;
+    margin: 0 auto;
+  }
 `;
 
 export const NavBlockImg = styled.img`
@@ -16,6 +24,12 @@ export const NavBlockImg = styled.img`
   max-width: 100%;
 `;
 
+export const NavBlockTextBlock = styled.div`
+  ${device.tablet} {
+    margin-right: 20px;
+  }
+`;
+
 export const NavBlockTitle= styled.h2`
   position: absolute;
   bottom: 3%;
@@ -23,6 +37,13 @@ export const NavBlockTitle= styled.h2`
   font-size: 24px;
   transition: color .3s;
   color: ${colorVariables.black};
+  white-space: nowrap;
+  ${device.tablet} {
+    font-size: 15px;
+    position: initial;
+    bottom: initial;
+    left: initial;
+  }
 `;
 
 export const NavBlockArrow= styled.div`
@@ -32,6 +53,12 @@ export const NavBlockArrow= styled.div`
   font-size: 18px;
   opacity: .5;
   transition: 1s;
+  ${device.tablet} {
+    position: initial;
+    bottom: initial;
+    left: initial;
+    margin-bottom: 10px;
+  }
 `;
 
 export const NavBlockNum = styled.div`
@@ -42,10 +69,21 @@ export const NavBlockNum = styled.div`
   transform: rotate(-90deg);
   color: black;
   opacity: .5;
+  white-space: nowrap;
+  ${device.tablet} {
+    position: initial;
+    bottom: initial;
+    left: initial;
+    transform: none;
+    margin-bottom: 10px;
+  }
 `;
 
 export const NavBlockLink = styled(Link)`
   color: ${colorVariables.black40};
+  height: 100%;
+  width: 100%;
+  display: block;
   &:hover {
     ${NavBlockTitle} {
       color: ${colorVariables.accent};
@@ -53,5 +91,11 @@ export const NavBlockLink = styled(Link)`
     ${NavBlockArrow} {
       left: 0%;
     }
+  }
+  ${device.tablet} {
+    padding: 0 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;

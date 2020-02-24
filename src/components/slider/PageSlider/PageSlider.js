@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import PageSliderСaptions from '../../../components/slider/PageSliderСaptions/PageSliderСaptions';
+import CatalogueMainLink from '../../../components/catalogue/CatalogueMainLink/CatalogueMainLink';
 import { 
   PageSliderStyled,
   PageSliderNextArrowStyled,
@@ -13,18 +14,25 @@ import {
   PageSliderSideH,
   PageSliderSideV,
 
-  PageSliderTitle1,
-  PageSliderTitle2,
+  PageSliderMainTitle,
+  PageSliderTitle,
   PageSliderSpecialText,
-  PageSliderImgWrapper1,
+  PageSliderMainImgWrapper,
   PageSliderImgWrapper2,
   PageSliderImg,
   PageSliderImgBlock,
+  PageSliderImgBlockWrapper,
+
   PageSliderAbout,
   PageSliderTaglineBlock,
   PageSliderTagline,
   PageSliderTaglineAuthor,
   PageSliderTaglineLink,
+  PageSliderNextLinkStyled,
+  PageSliderTagBlock,
+  PageSliderTag,
+  PageSliderTagDate,
+  PageSliderTagImgWrapper
 } from './PageSliderStyled';
 
 const PageSliderNextArrow = (props) => {
@@ -46,12 +54,13 @@ const PageSliderPrevArrow = (props) => {
       onClick={onClick}
       className={'PageSliderPrev'}
     >
-      prev
+      previous
     </PageSliderPrevArrowStyled>
   );
 }
 
 const PageSlider = (props) => {
+
   const {
     postDate,
     author,
@@ -62,7 +71,14 @@ const PageSlider = (props) => {
     secondImgSrc,
     blockImgSrc,
     blockImgText,
+    tagline,
+    nextLink,
+    collection,
+    collectionDate,
+    collectionImgSrc,
+    specialText,
   } = props;
+
   const settings = {
     dots: true,
     arrows: true,
@@ -93,6 +109,7 @@ const PageSlider = (props) => {
 
   return (
     <PageSliderStyled>
+      <CatalogueMainLink />
       <PageSliderСaptions 
         postDate={postDate}
         author={author}
@@ -104,17 +121,17 @@ const PageSlider = (props) => {
         >
           <PageSliderBlockWrapper>
             <PageSliderSideH bgColor={''}>
-              <PageSliderTitle1>
+              <PageSliderMainTitle>
                 {mainTitle}
-              </PageSliderTitle1>
+              </PageSliderMainTitle>
               <PageSliderAbout>
                 {mainAbout}
               </PageSliderAbout>
             </PageSliderSideH>
             <PageSliderSideH bgColor={'main'}>
-              <PageSliderImgWrapper1>
+              <PageSliderMainImgWrapper>
                 <PageSliderImg src={mainImgSrc} alt='main image'/>
-              </PageSliderImgWrapper1>
+              </PageSliderMainImgWrapper>
             </PageSliderSideH>
           </PageSliderBlockWrapper>
         </PageSliderBlock>
@@ -128,13 +145,13 @@ const PageSlider = (props) => {
               </PageSliderImgWrapper2>
             </PageSliderSideH>
             <PageSliderSideH bgColor={''}>
-              <PageSliderTitle2>
-                <PageSliderSpecialText> Beauty </PageSliderSpecialText>
-                <PageSliderSpecialText Special20> is the</PageSliderSpecialText>
-                <PageSliderSpecialText Special20> harmony </PageSliderSpecialText>
-                <PageSliderSpecialText Special50> of purpose </PageSliderSpecialText>
-                <PageSliderSpecialText Special20>& form.</PageSliderSpecialText>
-              </PageSliderTitle2>
+              <PageSliderTitle>
+                <PageSliderSpecialText>{specialText[0]}</PageSliderSpecialText>
+                <PageSliderSpecialText Special20>{specialText[1]}</PageSliderSpecialText>
+                <PageSliderSpecialText Special20>{specialText[2]}</PageSliderSpecialText>
+                <PageSliderSpecialText Special50>{specialText[3]}</PageSliderSpecialText>
+                <PageSliderSpecialText Special20>{specialText[4]}</PageSliderSpecialText>
+              </PageSliderTitle>
             </PageSliderSideH>
           </PageSliderBlockWrapper>
         </PageSliderBlock>
@@ -144,7 +161,9 @@ const PageSlider = (props) => {
           <PageSliderBlockWrapper>
             <PageSliderSideH bgColor={''}>
               <PageSliderImgBlock>
-                <PageSliderImg src={blockImgSrc} alt='block image'/>
+                <PageSliderImgBlockWrapper>
+                  <PageSliderImg src={blockImgSrc} alt='block image'/>
+                </PageSliderImgBlockWrapper>
                 <p>
                   {blockImgText}
                 </p>
@@ -157,7 +176,7 @@ const PageSlider = (props) => {
                   <span>Agata Bielen</span>
                 </PageSliderTaglineAuthor>
                 <PageSliderTagline>
-                  The most simple forms create the strongest visual effects.
+                  {tagline}
                 </PageSliderTagline>
                 <PageSliderTaglineLink href='#'>
                   share
@@ -171,10 +190,18 @@ const PageSlider = (props) => {
         >
           <PageSliderBlockWrapper Column>
             <PageSliderSideV bgColor={'main'}>
-              6
+              <PageSliderTagBlock>
+                <PageSliderTag>{collection}</PageSliderTag>
+                <PageSliderTagImgWrapper>
+                  <PageSliderImg src={collectionImgSrc} alt='collection image'/>
+                </PageSliderTagImgWrapper>
+                <PageSliderTagDate>{collectionDate}</PageSliderTagDate>
+              </PageSliderTagBlock>
             </PageSliderSideV>
             <PageSliderSideV Bottom bgColor={''}>
-              6
+              <PageSliderNextLinkStyled href={nextLink || '/'}>
+                Collection №{Number(num) + 1}
+              </PageSliderNextLinkStyled>
             </PageSliderSideV>
           </PageSliderBlockWrapper>
         </PageSliderBlock>

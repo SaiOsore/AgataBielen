@@ -1,6 +1,4 @@
 import React from 'react';
-import Socials from '../../../components/socials/Socials';
-import CatalogueMainLink from '../../../components/catalogue/CatalogueMainLink/CatalogueMainLink';
 import PageSlider from '../../../components/slider/PageSlider/PageSlider';
 
 
@@ -18,9 +16,12 @@ const RightLine = () => {
         secondImgSrc={'/img/catalogue/RightLine/rl2.jpg'}
         blockImgSrc={'/img/catalogue/RightLine/rl3.jpg'}
         blockImgText={'It is a pleasure to observe the different forms the geometric shapes take on when draped around the arm, the neck, the finger or the ear. It is fascinating how they change their appearance when the person wearing them changes posture or position.'}
-      />
-      <CatalogueMainLink 
-        textDecoration={'underline'}
+        collectionImgSrc={'/img/catalogue/RightLine/rl4.jpg'}
+        collection={'Spring / Summer'}
+        collectionDate={'2016'}
+        nextLink={'/natureline'}
+        tagline={'The most simple forms create the strongest visual effects.'}
+        specialText={['Beauty', 'is the', 'harmony', 'of purpose', '& form.']}
       />
     </>
   );

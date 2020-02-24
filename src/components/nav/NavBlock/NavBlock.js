@@ -2,9 +2,11 @@ import React from 'react';
 import { 
   NavBlockStyled,
   NavBlockLink,
+  NavBlockTextBlock,
   NavBlockTitle,
   NavBlockArrow,
   NavBlockNum,
+  NavBlockImgWrapper,
   NavBlockImg
 } from './NavBlockStyled';
 
@@ -24,14 +26,18 @@ const NavBlock = (props) => {
   return (
     <NavBlockStyled>
       <NavBlockLink href={link}>
-        <NavBlockTitle>
-          {title}
-        </NavBlockTitle>
-        <NavBlockArrow>→</NavBlockArrow>
-        <NavBlockNum>
-          Coll. №{num}
-        </NavBlockNum>
-        <NavBlockImg src={src} alt={alt} />
+        <NavBlockTextBlock>
+          <NavBlockTitle>
+            {title}
+          </NavBlockTitle>
+          <NavBlockArrow>→</NavBlockArrow>
+          <NavBlockNum>
+            Coll. №{num}
+          </NavBlockNum>
+        </NavBlockTextBlock>
+        <NavBlockImgWrapper>
+          <NavBlockImg src={src} alt={alt} />
+        </NavBlockImgWrapper>
       </NavBlockLink>
     </NavBlockStyled>
   );

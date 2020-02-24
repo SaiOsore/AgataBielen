@@ -1,11 +1,28 @@
 import styled from 'styled-components';
-// import { device } from '../../theme/variables';
+import { GoldenGridStyled, GoldenGridMainTitle } from '../../../components/layouts/GoldenGrid/GoldenGridStyled';
+import { device } from '../../../theme/variables';
 
 export const CatalogueStyled = styled.div`
   position: relative;
   height: 100vh;
   font-size: 20px;
+  ${device.tablet} {
+    height: 100%;
+  }
 `;
+
+export const CatalogueGrid = styled(GoldenGridStyled)`
+  ${device.tablet} {
+    display: block;
+  }
+`;
+
+export const CatalogueTitle = styled(GoldenGridMainTitle)`
+  ${device.tablet} {
+    height: 50vh;
+  }
+`;
+
 
 const CatalogueStripesBlock = styled.div`
   width: 100%;

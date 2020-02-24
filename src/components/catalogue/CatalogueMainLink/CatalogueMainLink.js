@@ -1,8 +1,6 @@
 import React from 'react';
 import { 
-  CatalogueMainLinkStyled, 
-  CatalogueMainLinkWrapper, 
-  CatalogueMainLinkContainer 
+  CatalogueMainLinkStyled
 } from './CatalogueMainLinkStyled';
 
 const CatalogueMainLink = (props) => {
@@ -16,19 +14,16 @@ const CatalogueMainLink = (props) => {
   } = props;
 
   return (
-    <CatalogueMainLinkContainer>
-      {' '}
-      {children}
-      <CatalogueMainLinkWrapper textDecoration={textDecoration}>
-        <CatalogueMainLinkStyled 
-          href={'/catalogue'}
-          onClick={onClick}
-          pointerEvents={pointerEvents}
-          color={color}
-          children={linkName || 'see all'}
-        />
-      </CatalogueMainLinkWrapper>
-    </CatalogueMainLinkContainer>
+    <>
+      <CatalogueMainLinkStyled 
+        textDecoration={textDecoration}
+        href={'/catalogue'}
+        onClick={onClick}
+        pointerEvents={pointerEvents}
+        color={color}
+        children={linkName || 'see all'}
+      />
+    </>
   );
 }
 

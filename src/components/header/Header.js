@@ -1,5 +1,4 @@
 import React from 'react';
-import { A } from 'hookrouter';
 import Logo from '../logo/Logo';
 import { HeaderStyled, HeaderLogo, HeaderLink } from './HeaderStyled';
 

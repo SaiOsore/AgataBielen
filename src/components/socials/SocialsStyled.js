@@ -4,10 +4,11 @@ import { colorVariables, sizeVariables, device } from '../../theme/variables';
 
 export const SocialsStyled = styled.div`
   position: fixed;
-  top: 80vh;
+  top: 70vh;
   left: calc(0% - 40px);
   transform: rotate(-90deg);
   font-size: ${(sizeVariables.m).size};
+  z-index: 100;
   ${device.laptopL} {
     font-size: ${(sizeVariables.s).size};
   }

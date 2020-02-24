@@ -1,14 +1,8 @@
 import React from 'react';
-import Slider from 'react-slick';
-import GoldenGrid from '../../components/layouts/GoldenGrid/GoldenGrid';
-import { 
-  GoldenGridLeftCol,
-  GoldenGridRightCol,
-} from '../../components/layouts/GoldenGrid/GoldenGridStyled';
 import { 
   HomeStyled,
-  HomeRightContainer,
-  HomeLeftContainer,
+  HomeBlock,
+  HomeImgWrapper,
   HomeImg,
   HomeTitle,
   HomeLink,
@@ -17,24 +11,22 @@ import {
 const Home = () => {
   return (
     <HomeStyled>
-      <GoldenGrid>
-        <GoldenGridLeftCol>
-          <HomeLeftContainer>
-            <HomeLink href="/about">
-              <HomeImg src="/img/catalogue/Main/natureline.jpg" alt="about" />
-              <HomeTitle>About</HomeTitle>
-            </HomeLink>
-          </HomeLeftContainer>
-        </GoldenGridLeftCol>
-        <GoldenGridRightCol>
-          <HomeRightContainer>
-            <HomeLink href="/catalogue">
-              <HomeImg src="/img/catalogue/Main/rightline.jpg" alt="catalogue" />
-              <HomeTitle>Catalogue</HomeTitle>
-            </HomeLink>
-          </HomeRightContainer>
-        </GoldenGridRightCol>
-      </GoldenGrid>
+      <HomeBlock bgColor={'main'}>
+        <HomeLink href="/about">
+          <HomeImgWrapper>
+            <HomeImg src="/img/catalogue/Main/natureline.jpg" alt="about" />
+          </HomeImgWrapper>
+          <HomeTitle>About</HomeTitle>
+        </HomeLink>
+      </HomeBlock>
+      <HomeBlock bgColor={'accent'}>
+        <HomeLink href="/catalogue">
+          <HomeImgWrapper>
+            <HomeImg src="/img/catalogue/Main/rightline.jpg" alt="catalogue" />
+          </HomeImgWrapper>
+          <HomeTitle>Catalogue</HomeTitle>
+        </HomeLink>
+      </HomeBlock>
     </HomeStyled>
   );
 }

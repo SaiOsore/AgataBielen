@@ -3,26 +3,19 @@ import { colorVariables, device, sizeVariables } from '../../../theme/variables'
 
 export const PageSliderCaptionsStyled = styled.div`
   position: absolute;
-  top: 92vh;
+  bottom: 3vh;
+  line-height: 1;
   left: 6vw;
   font-size: 14px;
   z-index: 100;
   display: flex;
-  align-items: flex-end;
-  ${device.laptopL} {
-    top: 90vh;
-    flex-direction: column;
-  }
+  align-items: baseline;
 `;
 
 export const PageSliderContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 162px;
-  ${device.laptopL} {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+  margin-right: 6vw;
 `;
 
 export const PageSliderBlock = styled.div`
