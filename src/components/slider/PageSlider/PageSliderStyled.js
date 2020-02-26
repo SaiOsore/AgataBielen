@@ -8,7 +8,10 @@ export const PageSliderStyled = styled.div`
   height: 100vh;
   width: 100%;
   overflow: hidden;
-
+  ${device.tabletL} {
+    position: relative;
+    height: 100%;
+  }
   & .PageSlider {
     position: relative;
     width: 100%;
@@ -16,7 +19,7 @@ export const PageSliderStyled = styled.div`
   }
 
   & .PageSliderNext, & .PageSliderPrev {
-    position: absolute;
+    position: fixed;
     top: 3%;
     z-index: 10;
     background: none;
@@ -59,6 +62,9 @@ export const PageSliderStyled = styled.div`
     bottom: initial;
     width: initial;
     background: none;
+    ${device.tabletL} {
+      display: none;
+    }
     & ol, & ul {
       display: flex;
       flex-direction: column;
@@ -109,6 +115,9 @@ export const PageSliderBlock = styled.div`
   padding: 0;
   margin: 0;
   background-color: ${(props) => get(colorVariables, props.bgColor, colorVariables.white)};
+  ${device.tabletL} {
+    height: 200vh;
+  }
 `;
 
 export const PageSliderBlockWrapper = styled.div`
@@ -142,7 +151,9 @@ export const PageSliderSideV = styled.div`
   width: 100%;
   height: 80%;
   background-color: ${(props) => get(colorVariables, props.bgColor, 'transparent')};
-
+  ${device.tabletL} {
+    height: 50%;
+  }
   ${(props) => props.Bottom && css`
     height: 20%;
   `};
@@ -155,6 +166,9 @@ export const PageSliderMainTitle = styled.h1`
   font-size: 7vw;
   white-space: nowrap;
   font-weight: 400;
+  ${device.tabletL} {
+    top: 15%;
+  }
 `;
 
 export const PageSliderTitle = styled.h2`
@@ -165,7 +179,13 @@ export const PageSliderTitle = styled.h2`
   white-space: nowrap;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: ${sizeVariables.xxl.spacing}
+  letter-spacing: ${sizeVariables.xxl.spacing};
+  ${device.tabletL} {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+  }
 `;
 
 export const PageSliderSpecialText = styled.p`
@@ -234,6 +254,9 @@ export const PageSliderAbout = styled.p`
   }
   ${device.laptop} {
     width: 75%;
+  }
+  ${device.tabletL} {
+    width: 85%;
   }
 `;
 
@@ -328,22 +351,37 @@ export const PageSliderNextLinkStyled = styled(Link)`
     height: 1px;
     background-color: ${colorVariables.black};
   }
+  ${device.tabletL} {
+    bottom: 15vh;
+    font-size: 30px;
+  }
 `;
 
-export const PageSliderTagBlock = styled.div`
+export const PageSliderTagContainer = styled.div`
   display: flex;
-  padding: 0 20%;
-  width: 100%;
+  width: 65%;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   top: 70%;
-  left: 47%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  ${device.tabletL} {
+    flex-direction: column;
+    top: 50%;
+  }
+`;
+
+export const PageSliderTagBlock = styled.div`
+  width: 33%;
+  text-align: center;
+  ${device.tabletL} {
+    width: 100%;
+  }
 `;
 
 export const PageSliderTag = styled.span`
-  margin-right: 2vw;
+  
 `;
 
 export const PageSliderTagDate = styled.span`
@@ -351,7 +389,9 @@ export const PageSliderTagDate = styled.span`
 `;
 
 export const PageSliderTagImgWrapper = styled.div`
-  width: 30%;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
 `;
 
 

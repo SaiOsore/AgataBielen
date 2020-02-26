@@ -19,7 +19,7 @@ const NatureLine = () => {
         collectionImgSrc={'/img/catalogue/NatureLine/nl4.jpg'}
         collection={'Fall / Winter'}
         collectionDate={'2017'}
-        nextLink={'/'}
+        nextLink={'/rightline'}
         tagline={'Inspired by water lilies floating on the pond surface & spreading aquatic circles.'}
         specialText={['Organic', 'objects', 'adapt', 'to the body', 'discreetly.']}
       />

@@ -6,7 +6,7 @@ export const colorVariables = {
   main: '#ede0df', // pink
   main50: 'rgba(237, 224, 223, .5)',
   second: '#e5eaeb', //blue
-  accent: '#d6dbdf', // blue
+  accent: 'red', // blue
   transparent: 'transparent',
 };
 

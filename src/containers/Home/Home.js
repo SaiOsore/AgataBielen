@@ -19,7 +19,7 @@ const Home = () => {
           <HomeTitle>About</HomeTitle>
         </HomeLink>
       </HomeBlock>
-      <HomeBlock bgColor={'accent'}>
+      <HomeBlock bgColor={'second'}>
         <HomeLink href="/catalogue">
           <HomeImgWrapper>
             <HomeImg src="/img/catalogue/Main/rightline.jpg" alt="catalogue" />

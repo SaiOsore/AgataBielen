@@ -5,12 +5,15 @@ import { colorVariables, sizeVariables, device } from '../../theme/variables';
 export const SocialsStyled = styled.div`
   position: fixed;
   top: 70vh;
-  left: calc(0% - 40px);
+  left: -40px;
   transform: rotate(-90deg);
   font-size: ${(sizeVariables.m).size};
   z-index: 100;
   ${device.laptopL} {
     font-size: ${(sizeVariables.s).size};
+  }
+  ${device.tabletL} {
+    left: -60px;
   }
 `;
 

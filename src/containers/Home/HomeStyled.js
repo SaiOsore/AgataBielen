@@ -22,9 +22,9 @@ export const HomeTitle = styled.h2`
 `;
 
 export const HomeLink = styled(Link)`
-  color: ${colorVariables.white};
+  color: ${colorVariables.black};
   &:hover {
-    color: ${colorVariables.black};
+    color: ${colorVariables.accent};
   }
 `;
 

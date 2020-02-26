@@ -52,7 +52,7 @@ export const NavBlockArrow= styled.div`
   left: -25%;
   font-size: 18px;
   opacity: .5;
-  transition: 1s;
+  transition: color .3s;
   ${device.tablet} {
     position: initial;
     bottom: initial;
@@ -85,7 +85,7 @@ export const NavBlockLink = styled(Link)`
   width: 100%;
   display: block;
   &:hover {
-    ${NavBlockTitle} {
+    ${NavBlockTitle}, ${NavBlockArrow} {
       color: ${colorVariables.accent};
     }
     ${NavBlockArrow} {

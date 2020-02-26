@@ -29,6 +29,7 @@ import {
   PageSliderTaglineAuthor,
   PageSliderTaglineLink,
   PageSliderNextLinkStyled,
+  PageSliderTagContainer,
   PageSliderTagBlock,
   PageSliderTag,
   PageSliderTagDate,
@@ -59,7 +60,16 @@ const PageSliderPrevArrow = (props) => {
   );
 }
 
+const goUp = () => {
+   const top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+   if(top > 0) {
+      window.scrollBy(0, -top);
+   }
+}
+
 const PageSlider = (props) => {
+
+  goUp();
 
   const {
     postDate,
@@ -90,6 +100,7 @@ const PageSlider = (props) => {
     nextArrow: <PageSliderNextArrow />,
     prevArrow: <PageSliderPrevArrow />,
     beforeChange: function(currentSlide, nextSlide) {
+      goUp();
       console.log("before change", currentSlide, nextSlide);
     },
     afterChange: function(currentSlide) {
@@ -190,13 +201,19 @@ const PageSlider = (props) => {
         >
           <PageSliderBlockWrapper Column>
             <PageSliderSideV bgColor={'main'}>
-              <PageSliderTagBlock>
-                <PageSliderTag>{collection}</PageSliderTag>
-                <PageSliderTagImgWrapper>
-                  <PageSliderImg src={collectionImgSrc} alt='collection image'/>
-                </PageSliderTagImgWrapper>
-                <PageSliderTagDate>{collectionDate}</PageSliderTagDate>
-              </PageSliderTagBlock>
+              <PageSliderTagContainer>
+                <PageSliderTagBlock>
+                  <PageSliderTag>{collection}</PageSliderTag>
+                </PageSliderTagBlock>
+                <PageSliderTagBlock>
+                  <PageSliderTagImgWrapper>
+                    <PageSliderImg src={collectionImgSrc} alt='collection image'/>
+                  </PageSliderTagImgWrapper>
+                </PageSliderTagBlock>
+                <PageSliderTagBlock>
+                  <PageSliderTagDate>{collectionDate}</PageSliderTagDate>
+                </PageSliderTagBlock>
+              </PageSliderTagContainer>
             </PageSliderSideV>
             <PageSliderSideV Bottom bgColor={''}>
               <PageSliderNextLinkStyled href={nextLink || '/'}>
