@@ -22,6 +22,7 @@ export const HomeTitle = styled.h2`
 `;
 
 export const HomeLink = styled(Link)`
+  z-index: 9;
   color: ${colorVariables.black};
   &:hover {
     color: ${colorVariables.accent};
