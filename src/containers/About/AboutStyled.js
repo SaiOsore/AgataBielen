@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { device } from '../../theme/variables';
+import { device, colorVariables } from '../../theme/variables';
 
 export const AboutStyled = styled.div`
   display: flex;
-  height: 100vh;
+  height: 100%;
   padding: 10vh 7vh 7vh 7vh;
   ${device.tabletL} {
     flex-direction: column;
@@ -53,6 +53,9 @@ export const AboutTitle = styled.h1`
 export const AboutBio = styled.p`
   text-align: right;
   font-size: 30px;
+  & span {
+    color: ${colorVariables.accent};
+  }
   ${device.laptopL} {
     font-size: 18px;
   }

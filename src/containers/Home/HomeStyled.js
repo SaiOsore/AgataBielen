@@ -5,8 +5,7 @@ import { colorVariables, sizeVariables, device } from '../../theme/variables';
 
 export const HomeStyled = styled.main`
   position: relative;
-  height: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   ${device.tablet} {
     flex-direction: column;
@@ -38,6 +37,7 @@ export const HomeBlock = styled.div`
   background-color: ${(props) => get(colorVariables, props.bgColor, colorVariables.white)};
   ${device.tablet} {
     width: 100%;
+    height: 50%;
   }
 `;
 
